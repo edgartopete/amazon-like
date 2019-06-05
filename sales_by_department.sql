@@ -1,0 +1,2 @@
+select t1.* ,t2.sales,(t1.over_head_costs-t2.sales)as result FROM departments as t1 inner join (select department_name,sum(product_sales) as sales from products group by department_name) t2
+on t1.department_name= t2.department_name;
